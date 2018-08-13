@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { ScrollView, StatusBar, Platform } from 'react-native';
+import { ScrollView, StatusBar, Platform, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { ListItem, Separator } from '../components/Lists/List';
-import { Navbar } from '../components/Navbar';
 
 const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md';
 const ICON_COLOR = '#868686';
@@ -16,7 +15,7 @@ class Settings extends Component {
     }
 
     handleSitePress = () => {
-        console.log('press site');
+        Linking.openURL('https://www.facebook.com/StudySpacePk/').catch(() => alert('An error occured'));
     }
 
     render() {
@@ -30,7 +29,7 @@ class Settings extends Component {
                 />
                 <Separator />
                 <ListItem
-                    text='Study Space'
+                    text='Facebook'
                     onPress={this.handleSitePress}
                     customIcon={(<Icon name={`${ICON_PREFIX}-link`} size={ICON_SIZE} color={ICON_COLOR} />)}
                 />
