@@ -27,5 +27,5 @@ EStyleSheet.build({
 
     //$outline: 1,
 });
-
+//ailiya here
 export default () => <Navigator />;
