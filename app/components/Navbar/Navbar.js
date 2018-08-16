@@ -4,15 +4,15 @@ import { View, TouchableHighlight, Image } from 'react-native';
 
 import styles from './styles';
 
-const Navbar = ({ onPress }) => (
+const Navbar = ({ settingsPress, homePress, examsPress }) => (
     < View style={styles.container} >
-        <TouchableHighlight onPress={onPress} underlayColor={styles.$underlayColor}>
+        <TouchableHighlight onPress={examsPress} underlayColor={styles.$underlayColor}>
             <View style={styles.settings} />
         </TouchableHighlight>
-        <TouchableHighlight onPress={onPress} underlayColor={styles.$underlayColor}>
+        <TouchableHighlight onPress={homePress} underlayColor={styles.$underlayColor}>
             <Image style={styles.home} resizeMode='contain' source={require('./images/graduation_cap.png')} />
         </TouchableHighlight>
-        <TouchableHighlight onPress={onPress} underlayColor={styles.$underlayColor}>
+        <TouchableHighlight onPress={settingsPress} underlayColor={styles.$underlayColor}>
             <View style={styles.one} />
         </TouchableHighlight>
 
@@ -20,7 +20,9 @@ const Navbar = ({ onPress }) => (
 );
 
 Navbar.propTypes = {
-    onPress: PropTypes.func,
+    settingsPress: PropTypes.func,
+    homePress: PropTypes.func,
+    examsPress: PropTypes.func,
 };
 
 export default Navbar;

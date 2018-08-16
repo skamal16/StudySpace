@@ -7,21 +7,23 @@ import { PageTitle } from '../Text';
 import styles from './styles';
 import { Navbar } from '../Navbar';
 
-const Page = ({ title, children, onPress }) => (
+const Page = ({ title, children, settingsPress, homePress, examsPress }) => (
     <Container>
         <StatusBar translucent={false} barStyle="light-content" />
         <PageTitle text={title} />
         <View style={styles.container}>
             {children}
         </View>
-        <Navbar onPress={onPress} />
+        <Navbar settingsPress={settingsPress} homePress={homePress} examsPress={examsPress} />
     </Container >
 );
 
 Page.propTypes = {
     children: PropTypes.any,
     title: PropTypes.string,
-    onPress: PropTypes.func,
+    settingsPress: PropTypes.func,
+    homePress: PropTypes.func,
+    examsPress: PropTypes.func,
 };
 
 export default Page;

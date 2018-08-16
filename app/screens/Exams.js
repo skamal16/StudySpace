@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 
@@ -10,13 +11,25 @@ const TEMP_CURRENT_EXAM = 'MCAT';
 
 class Exams extends Component {
 
-    handlePress = () => {
-        console.log('row press');
+    static propTypes = {
+        navigation: PropTypes.object,
     }
+
+    handleSettingsPress = () => {
+        this.props.navigation.navigate('Settings', { title: 'Settings' });
+    };
+
+    handleHomePress = () => {
+        this.props.navigation.navigate('Home', { title: 'Home' });
+    };
+
+    handlePress = () => {
+        console.log('press exam item');
+    };
 
     render() {
         return (
-            <Page title={TITLE}>
+            <Page title={TITLE} settingsPress={this.handleSettingsPress} homePress={this.handleHomePress}>
                 <StylishList
                     title={TITLE}
                     list={exams}

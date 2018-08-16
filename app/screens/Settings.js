@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ScrollView, StatusBar, Platform, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -10,8 +11,12 @@ const ICON_SIZE = 23;
 
 class Settings extends Component {
 
+    static propTypes = {
+        navigation: PropTypes.object,
+    }
+
     handleThemesPress = () => {
-        console.log('press theme');
+        this.props.navigation.navigate('Themes', { title: 'Themes' });
     }
 
     handleSitePress = () => {

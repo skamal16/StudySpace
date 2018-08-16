@@ -1,8 +1,9 @@
-import { StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Home from '../screens/Home';
+import Exams from '../screens/Exams'
 import Settings from '../screens/Settings';
+import Themes from '../screens/Themes';
 
 export default StackNavigator({
     Home: {
@@ -11,8 +12,20 @@ export default StackNavigator({
             header: () => null,
         },
     },
+    Exams: {
+        screen: Exams,
+        navigationOptions: {
+            header: () => null,
+        },
+    },
     Settings: {
         screen: Settings,
+        navigationOptions: ({ navigation }) => ({
+            headerTitle: navigation.state.params.title,
+        }),
+    },
+    Themes: {
+        screen: Themes,
         navigationOptions: ({ navigation }) => ({
             headerTitle: navigation.state.params.title,
         }),

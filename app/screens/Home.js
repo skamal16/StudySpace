@@ -14,9 +14,13 @@ class Home extends Component {
         this.props.navigation.navigate('Settings', { title: 'Settings' });
     };
 
+    handleExamsPress = () => {
+        this.props.navigation.navigate('Exams');
+    };
+
     render() {
         return (
-            <Page onPress={this.handleSettingsPress}>
+            <Page settingsPress={this.handleSettingsPress} examsPress={this.handleExamsPress}>
                 <StatusBar translucent={false} barStyle="light-content" />
             </Page>
         );

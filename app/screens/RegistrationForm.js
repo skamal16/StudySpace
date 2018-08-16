@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 
 import { Page } from '../components/Page';
 import Input from '../components/TextInput/Input';
@@ -33,28 +34,30 @@ class RegistrationForm extends Component {
     render() {
         return (
             <Page title={TITLE}>
-                <Input
-                    labelText={LABEL_TEXT1}
-                    defaultValue={DEFAULT_DISPLAY1}
-                    keyboardType="default"
-                    onChangeText={this.handleChangeText1}
-                />
-                <Input
-                    labelText={LABEL_TEXT2}
-                    defaultValue={DEFAULT_DISPLAY2}
-                    keyboardType="default"
-                    onChangeText={this.handleChangeText2}
-                />
-                <Input
-                    labelText={LABEL_TEXT3}
-                    defaultValue={DEFAULT_DISPLAY3}
-                    keyboardType="numeric"
-                    onChangeText={this.handleChangeText3}
-                />
-                <ClearButton
-                    text="Clear Form"
-                    onPress={this.handleClearButton}
-                />
+                <View style={{ flex: 1, justifyContent: 'center' }}>
+                    <Input
+                        labelText={LABEL_TEXT1}
+                        defaultValue={DEFAULT_DISPLAY1}
+                        keyboardType="default"
+                        onChangeText={this.handleChangeText1}
+                    />
+                    <Input
+                        labelText={LABEL_TEXT2}
+                        defaultValue={DEFAULT_DISPLAY2}
+                        keyboardType="default"
+                        onChangeText={this.handleChangeText2}
+                    />
+                    <Input
+                        labelText={LABEL_TEXT3}
+                        defaultValue={DEFAULT_DISPLAY3}
+                        keyboardType="numeric"
+                        onChangeText={this.handleChangeText3}
+                    />
+                    <ClearButton
+                        text="Clear Form"
+                        onPress={this.handleClearButton}
+                    />
+                </View>
             </Page>
         );
     }
